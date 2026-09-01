@@ -68,7 +68,7 @@
   }
 
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  section{padding:76px 0}
+  section{padding:100px 0}
 
   .eyebrow{
     font-family:"Outfit",sans-serif;
@@ -292,9 +292,9 @@
     background:linear-gradient(90deg,var(--moss),var(--sky),var(--sand));box-shadow:0 0 8px rgba(62,107,92,.4)}
   /* 見出しをより大きく・力強く */
   .hero h1{font-size:clamp(2.7rem,11vw,4.8rem);letter-spacing:.005em}
-  h2{font-size:clamp(1.9rem,6vw,2.85rem)}
+  h2{font-size:clamp(2rem,6.6vw,3.15rem);line-height:1.28}
   /* スクロール連動リビール */
-  .reveal{opacity:0;transform:translateY(32px);
+  .reveal{opacity:0;transform:translateY(44px);
     transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
   .reveal.in{opacity:1;transform:none}
   /* ヒーロー入場(JS有効時のみ隠す=js) */
@@ -302,7 +302,7 @@
   html.js .hero .lead,html.js .hero .hero-illus,html.js .hero .cta-row{opacity:0;transform:translateY(26px)}
   html.js body.loaded .hero .hero-badge{animation:riseIn .8s .05s cubic-bezier(.16,1,.3,1) forwards}
   html.js body.loaded .hero .eyebrow{animation:riseIn .8s .16s cubic-bezier(.16,1,.3,1) forwards}
-  html.js body.loaded .hero h1{animation:riseIn .95s .30s cubic-bezier(.16,1,.3,1) forwards}
+  html.js body.loaded .hero h1{animation:wipeUp 1.2s .30s cubic-bezier(.16,1,.3,1) forwards}
   html.js body.loaded .hero .lead{animation:riseIn .8s .52s cubic-bezier(.16,1,.3,1) forwards}
   html.js body.loaded .hero .hero-illus{animation:riseIn 1s .64s cubic-bezier(.16,1,.3,1) forwards}
   html.js body.loaded .hero .cta-row{animation:riseIn .8s .84s cubic-bezier(.16,1,.3,1) forwards}
@@ -329,11 +329,24 @@
   }
 
   /* ---- CINEMATIC PHOTO REVEAL (参考: ミニマル系) ---- */
-  html.js .cine{clip-path:inset(15% 0% 15% 0%);opacity:.4;
-    transition:clip-path 1.15s cubic-bezier(.16,1,.3,1),opacity .9s ease}
+  html.js .cine{clip-path:inset(26% 0% 26% 0%);opacity:.25;
+    transition:clip-path 1.8s cubic-bezier(.16,1,.3,1),opacity 1.2s ease}
   html.js .cine.in{clip-path:inset(0% 0% 0% 0%);opacity:1}
   @media (prefers-reduced-motion: reduce){
     html.js .cine{clip-path:none!important;opacity:1!important;transition:none!important}
+  }
+
+  /* ---- EDITORIAL / FULL-BLEED (参考: ミニマル系) ---- */
+  html,body{overflow-x:clip}
+  .festival,.friends{width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);
+    margin-right:calc(50% - 50vw);border-radius:0;border:0;box-shadow:none}
+  .festival img,.friends img{border-radius:0}
+  .festival figcaption,.friends .rcap{padding-left:24px;padding-right:24px}
+  html.js .hero h1{clip-path:inset(0 0 100% 0)}
+  @keyframes wipeUp{from{opacity:0;transform:translateY(46px);clip-path:inset(0 0 100% 0)}
+    to{opacity:1;transform:none;clip-path:inset(0 0 0 0)}}
+  @media (prefers-reduced-motion: reduce){
+    html.js .hero h1{clip-path:none!important;animation:none!important}
   }
 </style>
 
