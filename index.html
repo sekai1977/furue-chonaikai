@@ -327,6 +327,14 @@
     .px{transform:none!important}
     .scroll-cue span{animation:none;opacity:.5}
   }
+
+  /* ---- CINEMATIC PHOTO REVEAL (参考: ミニマル系) ---- */
+  html.js .cine{clip-path:inset(15% 0% 15% 0%);opacity:.4;
+    transition:clip-path 1.15s cubic-bezier(.16,1,.3,1),opacity .9s ease}
+  html.js .cine.in{clip-path:inset(0% 0% 0% 0%);opacity:1}
+  @media (prefers-reduced-motion: reduce){
+    html.js .cine{clip-path:none!important;opacity:1!important;transition:none!important}
+  }
 </style>
 
 <!-- ============ HERO ============ -->
@@ -590,9 +598,10 @@
     if(reduce){return;}
     // パララックス対象
     function setPx(sel,scale,amp){var el=document.querySelector(sel);if(el){el.classList.add('px');el.setAttribute('data-s',scale);el.setAttribute('data-a',amp);}}
-    setPx('.hero-illus','1','18');
-    setPx('.festival img','1.16','36');
-    setPx('.friends img','1.16','30');
+    setPx('.hero-illus','1.02','26');
+    setPx('.festival img','1.2','54');
+    setPx('.friends img','1.2','46');
+    ['.festival img','.friends img'].forEach(function(s){var el=document.querySelector(s);if(el)el.classList.add('cine');});
     var pxEls=[].slice.call(document.querySelectorAll('.px'));
     function runPx(){var vh=window.innerHeight;for(var i=0;i<pxEls.length;i++){var el=pxEls[i];var r=el.getBoundingClientRect();if(r.bottom<-100||r.top>vh+100)continue;var c=r.top+r.height/2;var ratio=(vh/2-c)/vh;var a=parseFloat(el.getAttribute('data-a')||'24');var s=el.getAttribute('data-s')||'1';el.style.transform='scale('+s+') translateY('+(ratio*a).toFixed(1)+'px)';}}
     // リビール登録
@@ -608,6 +617,7 @@
     });
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
     revEls.forEach(function(el){io.observe(el);});
+    [].slice.call(document.querySelectorAll('.cine')).forEach(function(el){io.observe(el);});
     // スクロール(進捗バー＋パララックス)
     var ticking=false;
     function onScroll(){if(ticking)return;ticking=true;requestAnimationFrame(function(){var de=document.documentElement;var max=de.scrollHeight-window.innerHeight;prog.style.width=(max>0?(de.scrollTop/max*100):0)+'%';runPx();ticking=false;});}
