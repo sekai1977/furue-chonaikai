@@ -92,6 +92,9 @@ section>.wrap{position:relative;z-index:1}
 .festival-caption>span{font:600 .75rem var(--font-latin);letter-spacing:.1em}
 .festival-caption p{font-size:clamp(2rem,4.6vw,4.7rem);font-weight:800;letter-spacing:-.05em;line-height:1.6}
 .festival figcaption{background:var(--paper);font-size:.875rem;gap:60px;padding:20px 30px}
+.festival-events{display:flex;justify-content:flex-end;padding:24px max(24px,calc((100vw - 1400px)/2));background:var(--paper)}
+.festival-events .text-link{display:inline-flex;align-items:center;gap:32px;min-height:44px;color:var(--blue)}
+.festival-events .text-link span{margin-left:0;font-size:1.4rem}
 .plan-sec{background:#edf0f5}
 .fee-grid{grid-template-columns:1fr 1fr;gap:10%;align-items:start}
 .fee-intro{position:sticky;top:140px}
