@@ -130,11 +130,19 @@ section>.wrap{position:relative;z-index:1}
 .kcard .ic{display:none}
 .kcard h3{grid-column:1;grid-row:1;font-size:clamp(1.3rem,2vw,1.85rem);line-height:1.65;letter-spacing:-.04em}
 .kcard p{grid-column:1;grid-row:2;font-size:1rem;line-height:2.1;align-self:start}
-.kcard .event-photos,.kcard .sport-imgs{grid-column:2;grid-row:1 / span 3;align-self:start}
+.kcard .event-photos,.kcard .sport-media{grid-column:2;grid-row:1 / span 3;align-self:start}
 .event-photos,.sport-imgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:0;align-items:start}
 .event-photos img,.sport-imgs img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center;border-radius:0;box-shadow:0 15px 25px -22px rgba(17,29,57,.4)}
 .event-photos figure,.sport-imgs figure{margin:0;min-width:0}
 .event-photos figcaption,.sport-imgs figcaption{font-size:.8125rem;font-weight:500;margin-top:13px;line-height:1.7}
+.sport-imgs figcaption span{font-size:.72rem;color:var(--ink-soft)}
+.sport-social{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:24px;padding:16px 18px;background:#fff;border:1px solid #cbd5e6;color:var(--ink);text-decoration:none;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.sport-social:hover,.sport-social:focus-visible{transform:translateY(-4px);box-shadow:0 12px 22px rgba(24,47,93,.1);border-color:var(--blue)}
+.sport-social>span{display:flex;flex-direction:column;gap:5px;min-width:0;line-height:1.5}
+.sport-social small{font:700 .625rem/1.5 var(--font-latin);letter-spacing:.11em;color:var(--blue)}
+.sport-social strong{font-size:.9rem;line-height:1.55}
+.sport-social>span>span{font-size:.75rem;color:var(--ink-soft)}
+.sport-social img{width:84px;height:84px;flex:none;object-fit:contain}
 .kids-real{margin-top:72px;gap:30px}
 .kids-real img{aspect-ratio:4/3;border-radius:0}
 .kids-note{background:transparent;border-left:1px solid var(--blue);padding:0 0 0 24px;margin-top:36px;font-size:.9375rem;line-height:2.1}
@@ -174,7 +182,7 @@ footer .demo-note{font-size:.75rem}
   .about-grid{grid-template-columns:38% 1fr;gap:7%}.about-sub{font-size:1.0625rem}
   .hook-grid{gap:6%}.cards{gap:0 36px}.card:nth-child(even){margin-top:60px}.card-number{font-size:4rem}
   .fee-grid{gap:8%}.plan-list{padding:20px 25px}.plan-foot{padding:0 25px 25px}
-  .kids-sec .kcard{grid-template-columns:1fr;gap:18px}.kcard .event-photos,.kcard .sport-imgs{grid-column:1;grid-row:3;margin-top:12px}.kcard p{max-width:44em}
+  .kids-sec .kcard{grid-template-columns:1fr;gap:18px}.kcard .event-photos,.kcard .sport-media{grid-column:1;grid-row:3;margin-top:12px}.kcard p{max-width:44em}
   .event-photos,.sport-imgs{gap:24px}.town h3{font-size:1.15rem}.town-index{font-size:4rem}
 }
 @media(max-width:760px){

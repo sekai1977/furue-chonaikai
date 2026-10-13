@@ -12,10 +12,30 @@
 .support-grid p{font-size:.9875rem;line-height:2;color:var(--ink-soft);max-width:37em;margin-bottom:18px}
 .support-grid .text-link{margin-top:auto;padding-top:22px}
 .support-grid .support-note{font-size:.75rem;line-height:1.8;margin:20px 0 0;color:#5f6975}
-.elmo-panel{display:grid;grid-template-columns:.73fr 1.27fr;gap:7%;align-items:start;margin-top:100px;padding-top:42px;border-top:1px solid #cbd3df}
+.elmo-panel{display:grid;grid-template-columns:.9fr 1.1fr;gap:38px 7%;align-items:start;margin-top:100px;padding-top:42px;border-top:1px solid #cbd3df}
 .elmo-intro .eyebrow{margin-bottom:21px}
 .elmo-intro h3{font-size:clamp(1.4rem,2.1vw,2rem);margin-bottom:17px}
 .elmo-intro p:last-child{color:var(--ink-soft);font-size:.9375rem;line-height:2}
+.elmo-network{position:relative;overflow:hidden;min-height:258px;padding:26px 30px 22px;background:#e1e9fa;border:1px solid #c6d4f2}
+.elmo-network:before{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(36,75,234,.2);border-radius:50%;right:-35px;top:-64px;pointer-events:none}
+.elmo-network-title{position:relative;font-size:1.1rem;font-weight:800;line-height:1.5;margin-bottom:18px}
+.elmo-network-groups{position:relative;display:flex;flex-wrap:wrap;gap:7px}
+.elmo-network-groups span{background:#fff;border:1px solid #b7c6eb;padding:5px 10px;font-size:.75rem;font-weight:700;line-height:1.5}
+.elmo-network-center{position:relative;display:inline-flex;align-items:baseline;gap:12px;margin:18px 0 13px;padding:8px 16px;background:var(--blue);color:#fff;font-weight:900;font-size:1.2rem;line-height:1.5}
+.elmo-network-center span{font:700 .55rem/1.5 var(--font-latin);letter-spacing:.11em}
+.elmo-network-areas{position:relative;font-size:.75rem;letter-spacing:.025em;color:#31456d}
+.elmo-story,.elmo-links{grid-column:1/-1}
+.elmo-story{display:grid;grid-template-columns:1.2fr .8fr;background:#fff;border:1px solid #d6dce6;overflow:hidden}
+.elmo-story-images{padding:8px;background:#fff}
+.elmo-story-images figure{position:relative;min-width:0;overflow:hidden;background:#e7e8e9}
+.elmo-story-images img{width:100%;height:100%;min-height:300px;object-fit:cover}
+.elmo-story-images figure:first-child img{object-position:center}
+.elmo-story-images figcaption{position:absolute;left:0;right:0;bottom:0;padding:18px 12px 10px;background:linear-gradient(transparent,rgba(10,20,40,.78));color:#fff;font-size:.6875rem;font-weight:700;line-height:1.5}
+.elmo-story-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:34px 36px}
+.elmo-story-date{font:700 .6875rem/1.5 var(--font-latin);letter-spacing:.1em;color:var(--blue);margin-bottom:15px}
+.elmo-story-copy h4{font-size:clamp(1.3rem,2vw,1.8rem);line-height:1.45;letter-spacing:-.04em;margin:0 0 18px}
+.elmo-story-copy p{font-size:.875rem;line-height:2;color:var(--ink-soft)}
+.elmo-story-copy small{font-size:.6875rem;line-height:1.6;color:#6a7486;margin-top:18px}
 .elmo-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .elmo-link{display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:330px;padding:24px;background:#fff;border:1px solid #d6dce6;color:var(--ink);text-decoration:none;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
 .elmo-link:hover,.elmo-link:focus-visible{transform:translateY(-5px);box-shadow:0 12px 24px rgba(24,47,93,.12);border-color:var(--blue)}
@@ -24,8 +44,8 @@
 .elmo-link strong{font-size:1.15rem}
 .elmo-link-copy>span:last-child{font-size:.75rem;color:var(--ink-soft)}
 .elmo-link img{display:block;width:145px;height:145px;object-fit:contain;margin:auto auto 0;background:#fff;image-rendering:auto}
-@media(max-width:1050px){.support-main,.support-circular{padding:36px 32px}.elmo-panel{grid-template-columns:1fr;gap:30px}.elmo-links{max-width:650px}}
-@media(max-width:760px){.support-intro,.support-grid{grid-template-columns:1fr}.support-intro{gap:18px;margin-bottom:34px}.support-intro .eyebrow{grid-column:auto}.support-intro .lead{font-size:.9375rem;padding-bottom:0}.support-grid{gap:22px}.support-main,.support-circular{padding:30px 26px 32px}.support-main{box-shadow:7px 8px 0 #dce4f0;margin-right:7px}.support-number{font-size:3rem;margin-bottom:22px}.support-grid h3{font-size:1.35rem}.support-grid p{font-size:.9375rem}.elmo-panel{margin-top:72px}.elmo-intro p:last-child{font-size:.9375rem}.elmo-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.elmo-link{min-height:300px;padding:18px 14px}.elmo-link strong{font-size:1rem}.elmo-link img{width:min(130px,100%);height:auto;aspect-ratio:1}}
+@media(max-width:1050px){.support-main,.support-circular{padding:36px 32px}.elmo-panel{grid-template-columns:1fr;gap:30px}.elmo-story,.elmo-links{grid-column:1}.elmo-links{max-width:650px}.elmo-story{grid-template-columns:1fr}.elmo-story-images img{min-height:250px}}
+@media(max-width:760px){.support-intro,.support-grid{grid-template-columns:1fr}.support-intro{gap:18px;margin-bottom:34px}.support-intro .eyebrow{grid-column:auto}.support-intro .lead{font-size:.9375rem;padding-bottom:0}.support-grid{gap:22px}.support-main,.support-circular{padding:30px 26px 32px}.support-main{box-shadow:7px 8px 0 #dce4f0;margin-right:7px}.support-number{font-size:3rem;margin-bottom:22px}.support-grid h3{font-size:1.35rem}.support-grid p{font-size:.9375rem}.elmo-panel{margin-top:72px}.elmo-intro p:last-child{font-size:.9375rem}.elmo-network{padding:24px 22px;min-height:0}.elmo-story-images{gap:5px;padding:5px}.elmo-story-images img{min-height:190px}.elmo-story-images figcaption{font-size:.625rem}.elmo-story-copy{padding:26px 24px 28px}.elmo-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.elmo-link{min-height:300px;padding:18px 14px}.elmo-link strong{font-size:1rem}.elmo-link img{width:min(130px,100%);height:auto;aspect-ratio:1}}
 @media(max-width:430px){.elmo-links{grid-template-columns:1fr}.elmo-link{min-height:0;display:grid;grid-template-columns:1fr 112px;gap:10px;align-items:center}.elmo-link img{width:112px;margin:0}.elmo-link-copy>span:last-child{font-size:.75rem}}
 @media(prefers-reduced-motion:reduce){.elmo-link:hover,.elmo-link:focus-visible{transform:none}}
 @media print{.support-main{box-shadow:none}.elmo-panel{break-inside:avoid}.elmo-link{break-inside:avoid}}
