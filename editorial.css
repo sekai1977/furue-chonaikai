@@ -120,6 +120,7 @@ section>.wrap{position:relative;z-index:1}
 .town h3{font-size:1.4rem;letter-spacing:-.025em}
 .town p{font-family:var(--font-latin);font-size:.625rem;letter-spacing:.09em}
 .town .kidbadge{border-radius:0;background:transparent;border-color:#bbc8f4;font-size:.75rem;font-family:var(--font-ja);font-weight:500;color:var(--blue)}
+.town .kidbadge--none{border-color:var(--line);color:var(--ink-soft)}
 .renkei{font-size:.9375rem;line-height:2.1;margin-top:24px}
 .kids-sec{background:#eff2f6}
 .kids-sec .sec-head{margin-bottom:70px}
